@@ -1,0 +1,75 @@
+{% extends 'kobosh/base.html' %}
+
+{% load static %}
+{% block 'content' %}
+<head>
+    <link rel="stylesheet" href="{% static 'kobosh/cart.css'%}">
+ 
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="center-wrapper">
+	<div class="content">
+	<div class="bag">
+		<p class="bag-head"><span style="text-transform: uppercase">Your Bag</span> - 1 item</p>
+	</div>
+	{% for item in cart %}
+	{% with product=item.product %}
+	<div class="bag-product">
+		<div class="image">
+			<img onclick="location.href='{{ product.get_absolute_url }}' " src="{% if product.image %}{{ product.image.url }}
+			{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
+		</div>
+		<div class="description">
+			<h1>{{ product.name }}</h1>
+			<p>Sun</p>
+			<p class="description-text">An easy-to-use dive computer with freedive mode and air integration.</p>
+			<p style="margin-bottom: 0.5rem;">One Size</p>
+			<h2>NGN {{ item.price }}</h2>
+			<div class="quantity-wrapper">
+				<div>
+					<label for="quantity" style="margin-right: 0.5rem;">Quantity: {{ item.quantity }}</label>
+				</div>
+				<form action="{% url "cart:cart_remove" product.id %}" method="post">
+				<button type="submit" class="btn-remove">Remove</button>
+				{% csrf_token %}
+			</form>
+			</div>
+		</div>
+	</div>
+	{% endwith %}
+ {% endfor %}
+	<div class="bag-total">
+		<div class="subtotal">
+			<p class="small">Subtotal:</p>
+			<p class="small">NGN {{ cart.get_total_price }}</p>
+		</div>
+		<div class="delivery">
+			<p class="small">Delivery (Standard - 2 working days):<br>
+				<span class="change-delivery">Change delivery method</span></p>
+			<p class="small">Free</p>
+		</div>
+		<div class="total">
+			<h3>Total:</h3>
+			<h3>NGN {{ cart.get_total_price }}</h3>
+		</div>
+		<div class="promo-checkbox">
+			<input type="checkbox" name="promo-check" checked>
+			<label for="promo-check">I have a promo code</label>
+		</div>
+		<div class="promo-code">
+			<input type="text" name="promo-checkbox" placeholder="Enter your promo code here" checked>
+			<button class="apply">Apply</button>
+		</div>
+		<button class="btn-go-checkout">
+			<i class="fas fa-lock"></i>
+			<span>Go to Checkout</span>
+		</button>
+	</div>
+	<div class="help">
+	</div>
+</div>
+</div>
+<div class="bg"></div>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+{% endblock %}

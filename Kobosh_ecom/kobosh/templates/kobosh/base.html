@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+   
+    <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="burger">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="logo">
+          <h2>BOKOSH</h2>
+        </div>
+  
+        <ul>
+          <li onclick='location.href="{% url 'home' %}"' | escapejs >HOME</li>
+          <li>SHOP</li>
+
+          <li onclick='location.href="{% url 'all_product' %}"' | escapejs>ALL CATEGORIES</li>
+        </ul>
+        <input type="search" id="all_search" placeholder="Search Products" />
+        <div class="icons">
+          <i class="fa-solid fa-magnifying-glass" id="search"></i>
+          <img onclick='location.href="{% url 'signup' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
+          <img onclick='location.href="{% url 'cart' %}"' | escapejs src="{% static 'kobosh/cart.png' %}" id="cart" alt="cart" />
+        </div>
+      </nav>
+      
+
+
+
+      {% block 'content' %}
+
+
+
+      {% endblock %}
+
+
+      <footer>
+        <div class="foot_head">
+          <div class="logo">
+            <h2>BOKOSH</h2>
+          </div>
+          <div class="newsletter">
+            <h3>We love to keep you updated with our new offers</h3>
+            <h2>Subscribe to our newsletter now!</h2>
+            <form action="">
+              <i class="fa-solid fa-envelope" id="new_mail"></i>
+              <input type="email" placeholder="Enter Your Email" />
+              <input type="submit" value="SUBSCRIBE NOW" />
+            </form>
+          </div>
+        </div>
+        <div class="foot_bottom">
+          <div class="bt_left">
+            <h3>CATEGORIES LINKS</h3>
+            <hr>
+            <ul>
+              <li><a href=".">Men Collection</a></li>
+              <li><a href=".">Women Collection</a></li>
+              <li><a href=".">Kids Collection</a></li>
+              <li><a href=".">Fashion Accessories</a></li>
+              <li><a href=".">Other Categories</a></li>
+            </ul>
+  
+            <ul class="right">
+              <li><a href=".">Phones & Gadgets</a></li>
+              <li><a href=".">Laptops & Accessories</a></li>
+              <li><a href=".">TV & Electronics</a></li>
+              <li><a href=".">Home Appliances</a></li>
+              <li><a href=".">Furniture & Beddings</a></li>
+            </ul>
+          </div>
+          <div class="bt_middle">
+            <h3>OTHER LINKS</h3>
+            <hr />
+            <ul>
+              <li><a href=".">Home</a></li>
+              <li><a href=".">About Us</a></li>
+              <li><a href=".">Shop</a></li>
+              <li><a href=".">Account</a></li>
+              <li><a href=".">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div class="bt_right">
+            <h3>HOW CAN BOKOSH HELP YOU</h3>
+            <hr />
+            <ul>
+              <li><a href=".">Delivery Anywhere in Nigeria</a></li>
+              <li><a href=".">Shopping Online</a></li>
+              <li><a href=".">Return & Refund Policy</a></li>
+              <li><a href=".">Report a Problem</a></li>
+              <li><a href=".">Our Offices & Warehouse</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <hr id="last_hr" />
+      <div class="payment">
+        <h3>PAYMENTS METHODS</h3>
+        <h2>CONNECT WITH US</h2>
+        <div class="socials">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <!-- <img src="" alt="">
+          <img src="" alt="">
+          <img src="" alt=""> -->
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; Bokosh 2023</p>
+  
+        <i
+          onclick="location.href='#cont'"
+          class="fa-solid fa-arrow-up"
+          id="arrow"
+        ></i>
+      </div>
+
+    
+    <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="{% static 'kobosh/scripts.js' %}"></script>
+
+</body>
+</html>

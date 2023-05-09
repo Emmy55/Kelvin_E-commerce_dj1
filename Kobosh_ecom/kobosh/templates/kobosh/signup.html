@@ -1,0 +1,55 @@
+{% extends 'kobosh/base.html' %}
+
+{% load static %}
+{% block 'content' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'kobosh/login&signup.css' %}">
+</head>
+
+<body>
+    <div class="all_forms">
+        <div class="create">
+            <form action="" method="post">
+                {% csrf_token %}
+                <h2>Create an account</h2>
+                <label for="input">
+                    <strong>First name</strong>
+                    <br />
+                    <input id="full_name" type="text" name="fname" /> </label><br /><br />
+                <label for="input">
+                    <strong>Last name</strong>
+                    <br />
+                    <input id="full_name" type="text" name="sname" /> </label><br /><br />
+                <label for="input">
+                    <strong>Email</strong>
+                    <br />
+                    <input id="full_name" type="email" name="email" /> </label><br /><br />
+                <label for="input">
+                    <strong>Password</strong>
+                    <br />
+                    <input id="full_name" type="password" name="pass" /> </label><br /><br />
+                <label for="input">
+                    <strong>Confirm Password</strong>
+                    <br />
+                    <input id="full_name" type="password" name="cpass" /> </label><br />
+                <br />
+                <br />
+    
+                <input style="width: 90%;" type="submit" value="Create account" class="account_create" />
+            </form>
+            <div class="bottom">
+            <p id="acc">Already have account? <a href="{% url 'login' %}">Login</a></p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

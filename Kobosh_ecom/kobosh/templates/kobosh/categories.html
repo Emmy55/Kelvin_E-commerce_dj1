@@ -1,0 +1,187 @@
+{% extends 'kobosh/base.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Category</title>
+</head>
+
+
+{% block 'content' %}
+  {% load static %}
+<body>
+  
+
+  <head>
+    <link rel="stylesheet" href="{% static 'kobosh/cate.css' %}">
+
+  </head>
+
+
+  <div class="left_side">
+
+    <div class="burger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div id="">
+      <ul class="links">
+        <h1>Categories</h1>
+        <hr />
+        <a href="#men">Men's Collection</a>
+        <a href="#women">Women’s Collection</a>
+        <a href="#kids">Kiddies Collection</a>
+        <a href="#shoes">Shoes & Bags</a>
+        <a href="#fashion">Fashion Accessories</a>
+        <a href="#phone">Phones & Gadgets</a>
+        <a href="#electronics">TV & Electronics</a>
+        <a href="#home">Home Appliances</a>
+        <a href="#laptops">Laptops & Computers</a>
+        <a href="#furniture">Furniture & Beddings</a>
+        <a href="#other">Other Categories</a>
+      </ul>
+    </div>
+  </div>
+  <div class="all">
+    <h2 id="men">Men's Collection</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="women">Women’s Collection</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <h2 id="kids">Kiddies Collection</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="shoes">Shoes & Bags</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="fashion">Fashion Accessories</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="phone">Phones & Gadgets</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="electronics">TV & Electronics</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="home">Home Appliances</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="laptops">Laptops & Computers</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="furniture">Furniture & Beddings</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <h2 id="other">Other Categories</h2>
+    <div class="prod">
+      <img src="category1.png" alt="" />
+      <h3>Trendy Men’s Lace up sneakers</h3>
+      <p><strong>NGN 15,000</strong></p>
+      <button>Add to Cart</button>
+    </div>
+</div>
+</div>
+
+  <script>
+    btn = document.querySelector(".burger");
+    body = document.querySelector("body")
+    navlist = document.querySelector("ul");
+
+    bod = document.querySelector("#head");
+
+    btn1 = document.querySelector(".burger1");
+
+    btn.addEventListener("click", () => {
+      navlist.classList.toggle("clipped").checked;
+    });
+    ul = document.getElementById("hamburger");
+
+    ul.addEventListener("click", () => {
+      navlist.classList.toggle("clipped").checked = false;
+    });
+  </script>
+  <script>
+    let section = document.querySelectorAll('.prod');
+    let lists = document.querySelectorAll('a');
+    function activeLink(li) {
+      lists.forEach((item) => item.classList.remove('active'));
+      li.classList.add('active');
+    }
+    lists.forEach((item) =>
+      item.addEventListener('click', function () {
+        activeLink(this);
+      }));
+
+    window.onscroll = () => {
+      section.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+          const target = document.querySelector(`[href='#${id}']`).parentElement;
+          activeLink(target);
+        }
+      })
+    };
+  </script>
+
+  <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
+
+
+</body>
+{% endblock %}
+
+</html>
+</script>
+</body>
+
+</html>

@@ -270,11 +270,17 @@
     .all {
       display: flex;
       flex-wrap: wrap;
-      width: 75%;
-      height: 50px;
-      float: right;
+      width: 70%;
+      height: fit-content;
+      float: right;position: relative;
+      left: 25%;
+    
     }
-
+    .all_page {
+      display: flex;
+  flex-direction: column;
+  height: 100%;
+  }
     .all .prod {
       background-color: #af9331;
       height: 20pc;
@@ -282,6 +288,7 @@
       width: 30%;
       margin: 10px;
       position: relative;
+      
       top: 6.5pc;
     }
 
@@ -291,6 +298,7 @@
       position: relative;
       /* left: 20%; */
       text-align: center;
+      color: black;
       /* align-items: center; */
       width: 100%;
       top: -5%;
@@ -299,6 +307,10 @@
     .all .prod p {
       position: relative;
       top: -30px;
+    }
+    .all .prod p strong {
+      color: black;
+
     }
 
     .all .prod button {
@@ -321,9 +333,23 @@
 
     .all h2 {
       width: 100%;
+      color: black;
+      margin: 20px;
       position: relative;
       top: 6pc;
       text-align: center;
     }
-
+    footer ,#last_hr, .payment{
+      display: none;
+    }
+    .copyright{
+      position: relative;
+      top: 65px;
+      height: 20px;
+    }
+    #arrow {
+      top: -23px;
+      position: relative;
+      /* move the element 200px to the right */
+  }
   }

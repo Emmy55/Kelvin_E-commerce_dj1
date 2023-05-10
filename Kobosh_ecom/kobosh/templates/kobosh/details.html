@@ -7,6 +7,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,126 +16,141 @@
     <style>
         @media screen and (min-device-width: 0) and (max-device-width: 767px) {
             .right_des {
-            position: relative;
-            width: 50%;
-            top:-15pc;
-            float: right;
-        }
-        .items{
-            width: 81%;
-            position: relative;
-            top:3pc;
-            border: 1px solid black;
-            padding: 15px;
-            left: 5%;
-            font-size:12px;
-            padding-bottom: 50px;
-            border-radius: 25px;
-        }
-        .items_img{
-        width: 47%;
-        height: 230px;
-        }
-        .items .des {
-            position: relative;
-            top: 7pc;
-            width: 200%;
-            right: 98%;
-        }
-        .items img {
-            width: 100%;
-            height: 70%;
-        }
-        input[type='submit']{
-            background-color: #AF9331;
-            border: none;
-            /* float: right; */
-            top: -30px;
-            position: relative;
-            width: 70%;
-            height: 30px;
-            border-radius: 15px;
-            color: white;
-        }
-        }
-        @media screen and (min-width:1200px) {
-           
-        .right_des {
-            position: relative;
-            width: 50%;
-            top:-23pc;
-            float: right;
-        }
-        .items{
-            width: 50%;
-            position: relative;
-            top:10pc;
-            border: 1px solid black;
-            padding: 15px;
-            height: 100pc;
-            left: 25%;
+                position: relative;
+                width: 50%;
+                top: -15pc;
+                float: right;
+            }
 
-            height: 100%;
-            border-radius: 25px;
+            .items {
+                width: 81%;
+                position: relative;
+                top: 3pc;
+                border: 1px solid black;
+                padding: 15px;
+                left: 5%;
+                font-size: 12px;
+                padding-bottom: 50px;
+                border-radius: 25px;
+            }
+
+            .items_img {
+                width: 47%;
+                height: 230px;
+            }
+
+            .items .des {
+                position: relative;
+                top: 7pc;
+                width: 200%;
+                right: 98%;
+            }
+
+            .items img {
+                width: 100%;
+                height: 70%;
+            }
+
+            input[type='submit'] {
+                background-color: #AF9331;
+                border: none;
+                /* float: right; */
+                top: -30px;
+                position: relative;
+                width: 70%;
+                height: 30px;
+                border-radius: 15px;
+                color: white;
+            }
         }
-        .items_img{
-        width: 43%;
-        height: 360px;
+
+        @media screen and (min-width:1200px) {
+
+            .right_des {
+                position: relative;
+                width: 50%;
+                top: -23pc;
+                float: right;
+            }
+
+            .items {
+                width: 50%;
+                position: relative;
+                top: 10pc;
+                border: 1px solid black;
+                padding: 15px;
+                height: 120pc;
+                left: 25%;
+
+                height: 100%;
+                border-radius: 25px;
+            }
+
+            .items_img {
+                width: 43%;
+                height: 360px;
+            }
+
+            .items img {
+                width: 100%;
+                height: 80%;
+            }
+
+            input[type='submit'] {
+                background-color: #AF9331;
+                border: none;
+                /* float: right; */
+                top: 40px;
+                position: relative;
+                width: 30%;
+                height: 30px;
+                left: -34%;
+                border-radius: 15px;
+                color: white;
+            }
+
+            .right_des h2,
+            .right_des p,
+            .des,
+            select,
+            option {
+                color: black;
+            }
+
+            .right_des h2 {
+                margin-top: 9px;
+                margin-bottom: 9px;
+            }
+
+            select {
+                position: relative;
+                left: -60px;
+                margin: 5px;
+            }
         }
-        .items img {
-            width: 100%;
-            height: 80%;
-        }
-        input[type='submit']{
-            background-color: #AF9331;
-            border: none;
-            /* float: right; */
-            top: 40px;
-            position: relative;
-            width: 30%;
-            height: 30px;
-            left: -34%;
-            border-radius: 15px;
-            color: white;
-        }
-        .right_des h2, .right_des p, .des, select, option{
-            color: black;
-        }
-        .right_des h2{
-            margin-top:9px;
-            margin-bottom: 9px;
-        }
-        select {
-            position: relative;
-            left: -60px;
-            margin: 5px;
-        }
-    }
-       
     </style>
 </head>
+
 <body>
     <div class="items">
         <div class="items_img">
             <img src="{% if product.image %}{{ product.image.url }}{% else %}
             {% static 'img/no_image.png' %}{% endif %}" alt="">
         </div>
-        
+
         <div class="right_des">
             <h2>{{ product.name }}</h2>
             <p><strong style="color: #AF9331;">NGN{{ product.price }} </strong></p>
             <div class="des">(max is 35) {{ product.description }}</div>
             <form action="{% url 'cart:cart_add' product.id %}" method="post">
-            {{ cart_product_form }}
-            {% csrf_token %}
-            <input type="submit" name="" id="" value="Add to Cart">
-        </form>
+                {{ cart_product_form }}
+                {% csrf_token %}
+                <input type="submit" name="" id="" value="Add to Cart">
+            </form>
         </div>
     </div>
-    <script
-      src="https://kit.fontawesome.com/9da17deac8.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
 {% endblock %}

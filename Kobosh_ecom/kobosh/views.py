@@ -52,7 +52,7 @@ def cart(request):
     return render(request, 'kobosh/cart.html')
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 
 def signup(request):
     if request.method == 'POST':

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:700");
+
 * {
   margin: 0;
-  color: rgb(0, 0, 0);
   padding: 0;
   box-sizing: border-box;
 }
@@ -13,6 +13,7 @@
 .center-wrapper {
   padding: 0.5rem;
   display: flex;
+  margin-top: 30px;
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
@@ -20,9 +21,11 @@
 
 .content {
   margin: 0 auto;
+  padding:10px;
   max-width: 600px;
-  border: 1px solid lemonchiffon;
+  border: 1px solid rgb(233, 212, 23);
   margin-top: 5%;
+  border-radius: 20px;
   background: white;
 }
 
@@ -39,7 +42,7 @@
 } */
 
 #arrow {
-    display: none;
+  display: none;
 }
 
 
@@ -104,12 +107,23 @@ button {
   font-size: 0.8rem;
 }
 
-h1 {
+.bag-total h1 {
   font-size: 1.6rem;
 }
 
-h2 {
+.bag-total h2 {
   font-size: 1.4rem;
+}
+
+.bag-product .description h1,
+.bag-product .description p,
+.bag-product .description h2,
+.bag-product .description label,
+.bag-total p,
+.bag-total h3,
+.bag-total .promo-checkbox label {
+  color: rgb(0, 0, 0);
+
 }
 
 .image {
@@ -117,8 +131,10 @@ h2 {
   position: relative;
   left: 2%;
 }
+
 .image img.product-image {
-  max-width: 100%;
+  max-width: 80%;
+  height:80%;
 }
 
 .description {

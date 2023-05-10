@@ -9,9 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="center-wrapper">
 	<div class="content">
-	<div class="bag">
-		<p class="bag-head"><span style="text-transform: uppercase">Your Bag</span> - 1 item</p>
-	</div>
+
 	{% for item in cart %}
 	{% with product=item.product %}
 	<div class="bag-product">
@@ -21,8 +19,7 @@
 		</div>
 		<div class="description">
 			<h1>{{ product.name }}</h1>
-			<p>Sun</p>
-			<p class="description-text">An easy-to-use dive computer with freedive mode and air integration.</p>
+			<p class="description-text">{{ product.description }}</p>
 			<p style="margin-bottom: 0.5rem;">One Size</p>
 			<h2>NGN {{ item.price }}</h2>
 			<div class="quantity-wrapper">
@@ -53,7 +50,7 @@
 			<h3>NGN {{ cart.get_total_price }}</h3>
 		</div>
 		<div class="promo-checkbox">
-			<input type="checkbox" name="promo-check" checked>
+			<input type="checkbox" name="promo-check">
 			<label for="promo-check">I have a promo code</label>
 		</div>
 		<div class="promo-code">

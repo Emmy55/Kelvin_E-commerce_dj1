@@ -48,9 +48,6 @@ def product_detail(request, id, slug):
 
 
 
-def cart(request):
-    return render(request, 'kobosh/cart.html')
-
 
 # @login_required(login_url='login')
 
@@ -69,7 +66,7 @@ def signup(request):
 
             my_user=User.objects.create_user(uname, email, pass1)
             my_user.save()
-            return redirect('home')
+            return redirect('login')
         
     return render(request, 'kobosh/signup.html')
 
@@ -91,3 +88,14 @@ def login(request):
 
 def forgotpassword(request):
     return render(request, 'kobosh/forgotpass.html')
+
+
+def resize_image(image):
+    img = Image.open(image)
+    output_size = (800, 600)  # Set the desired size for the image
+    img.thumbnail(output_size)
+    output_io = BytesIO()
+    img.save(output_io, format='JPEG', quality=85)
+    output_io.seek(0)
+    resized_image = InMemoryUploadedFile(output_io, 'ImageField', "%s.jpg" % image.name.split('.')[0], 'image/jpeg', output_io.getvalue(), None)
+    return resized_image

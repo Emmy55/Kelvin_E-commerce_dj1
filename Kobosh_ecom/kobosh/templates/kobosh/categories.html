@@ -1,6 +1,7 @@
 {% extends 'kobosh/base.html' %}
 
-
+{% block 'content' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +14,7 @@
 </head>
 
 
-{% block 'content' %}
-{% load static %}
+
 
 <head>
   <link rel="stylesheet" href="{% static 'kobosh/cate.css' %}">
@@ -36,123 +36,33 @@
         <ul class="links">
           <h1>Categories</h1>
           <hr />
-          <a href="#men">Men's Collection</a>
-          <a href="#women">Women’s Collection</a>
-          <a href="#kids">Kiddies Collection</a>
-          <a href="#shoes">Shoes & Bags</a>
-          <a href="#fashion">Fashion Accessories</a>
-          <a href="#phone">Phones & Gadgets</a>
-          <a href="#electronics">TV & Electronics</a>
-          <a href="#home">Home Appliances</a>
-          <a href="#laptops">Laptops & Computers</a>
-          <a href="#furniture">Furniture & Beddings</a>
-          <a href="#other">Other Categories</a>
+          <a href="{% url 'kobosh:cate' %}">All</a>
+          {% for c in categories %}
+          <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+
+          {% endfor %}
         </ul>
       </div>
     </div>
     
     <div class="all">
-      <h2 id="men">Men's Collection</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
+      {% for c in categories %}
+      <h2 id="men">{{ c.name }}</h2>
+      {% for product in c.products.all %}
+      <div class="prod" onclick="location.href='{{ product.get_absolute_url }}'">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+          static "img/no_image.png" %}{% endif %}" alt="" />
+        <h3>{{ product.name }}</h3>
+        <p><strong> NGN {{ product.price }}</strong></p>
         <button>Add to Cart</button>
       </div>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="women">Women’s Collection</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-
-      <h2 id="kids">Kiddies Collection</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="shoes">Shoes & Bags</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="fashion">Fashion Accessories</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="phone">Phones & Gadgets</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="electronics">TV & Electronics</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="home">Home Appliances</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="laptops">Laptops & Computers</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="furniture">Furniture & Beddings</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      <h2 id="other">Other Categories</h2>
-      <div class="prod">
-        <img src="category1.png" alt="" />
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p><strong>NGN 15,000</strong></p>
-        <button>Add to Cart</button>
-      </div>
+      {% endfor %}
+      {% endfor %}
     </div>
   </div>
 
   <script>
-    btn = document.querySelector(".burger");
+    btn = document.querySelector('.burger');
     body = document.querySelector("body")
     navlist = document.querySelector("ul");
 
@@ -200,10 +110,6 @@
 
 
 </body>
+
+</html>
 {% endblock %}
-
-</html>
-</script>
-</body>
-
-</html>

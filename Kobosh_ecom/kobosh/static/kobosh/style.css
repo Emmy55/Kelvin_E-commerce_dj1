@@ -941,11 +941,12 @@
         width: 92%;
         height: 84%;
         scrollbar-width: none;
-
+        overflow:hidden;
         overflow-x: scroll;
     }
 
     .all_category img {
+        /* height:15pc; */
         border-radius: 6px;
     }
 
@@ -1007,6 +1008,8 @@
 
     }
     .product img {
+        height: 18pc;
+        border-radius: 10px 10px 0px 0px;
         width: 100%;
     }
     #prev {
@@ -1033,16 +1036,20 @@
 
     .ab h3,
     .ab p {
-        color: #AF9331;
-        font-weight: bold;
+        color: #000000;
+        position:relative;
+        top:3px;
+        font-weight: bolder;
     }
 
     .ab h3 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .ab p {
         font-size: 17px;
+        position:relative;
+        top:15px;
 
     }
     

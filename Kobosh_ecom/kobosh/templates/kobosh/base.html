@@ -20,16 +20,16 @@
         </div>
   
         <ul>
-          <li onclick='location.href="{% url 'home' %}"' | escapejs >HOME</li>
-          <li>SHOP</li>
+          <li style="cursor: pointer;" onclick='location.href="{% url 'kobosh:home' %}"' | escapejs >HOME</li>
+          <li style="cursor: pointer;">SHOP</li>
 
-          <li onclick='location.href="{% url 'all_product' %}"' | escapejs>ALL CATEGORIES</li>
+          <li style="cursor: pointer;" onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
         </ul>
         <input type="search" id="all_search" placeholder="Search Products" />
         <div class="icons">
           <i class="fa-solid fa-magnifying-glass" id="search"></i>
-          <img onclick='location.href="{% url 'signup' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
-          <img onclick='location.href="{% url 'cart' %}"' | escapejs src="{% static 'kobosh/cart.png' %}" id="cart" alt="cart" />
+          <img onclick='location.href="{% url 'kobosh:signup' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
+          <img onclick='location.href="{% url 'kobosh:cart' %}"' | escapejs src="{% static 'kobosh/cart.png' %}" id="cart" alt="cart" />
         </div>
       </nav>
       

@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')), 
-    path('', include('kobosh.urls')),
+    path('', include('kobosh.urls', namespace='kobosh')),
 ]
 
 if settings.DEBUG:

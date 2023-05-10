@@ -58,7 +58,7 @@
 
  {% for c in categories %}
  <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="{% url 'home' %}"' src="{{ c.image.url }}" alt="" />
+      <img onclick='location.href="{% url 'kobosh:home' %}"' src="{{ c.image.url }}" alt="" />
       <h3>{{ c.name }}</h3>
     </div>
  {% endfor %}
@@ -73,63 +73,19 @@
       <h4>See All <i class="fa-solid fa-arrow-right-long"></i></h4>
       <h3>New Arrival</h3>
   </div>
+
   <div class="all_product">
-    <div class="product">
-      <img src="product1.png" alt="" />
+    {% for product in products %}
+    <div class="product" onclick="location.href='{{ product.get_absolute_url }}' ">
+      <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+        static "img/no_image.png" %}{% endif %}" alt="" />
       <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
+        <h3>{{ product.name }}</h3>
+        <p>NGN {{ product.price }}</p>
       </div>
     </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="product1.png" alt="" />
-      <div class="ab">
-        <h3>Trendy Men’s Lace up sneakers</h3>
-        <p>NGN 15,000</p>
-      </div>
-    </div>
+ {% endfor %}
+
   </div>
 </div>
 

@@ -20,19 +20,15 @@ def home(request, category_slug=None):
         category = get_object_or_404(Category,
                                      slug=category_slug)
         products = products.filter(category=category)
-    return render(request,
-                  'kobosh/home.html',
-                  {'category' : category,
-                   'categories': categories,
-                   'products': products})
-
-def all_product(request, category_slug=None):
-    products = Product.objects.filter(available=True)
-
-    return render(request,
-                  'kobosh/categories.html',
-                  {'products': products})
-
+    
+    context={'category' : category,
+        'categories': categories,
+        'products': products}
+    if request.resolver_match.url_name == 'home':
+        template_name = 'kobosh/home.html'
+    else:
+        template_name = 'kobosh/categories.html'
+    return render(request, template_name, context)
 
 
 def product_detail(request, id, slug):
@@ -74,6 +70,7 @@ def signup(request):
             my_user=User.objects.create_user(uname, email, pass1)
             my_user.save()
             return redirect('home')
+        
     return render(request, 'kobosh/signup.html')
 
 

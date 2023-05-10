@@ -11,7 +11,6 @@ class Category(models.Model):
                               blank=True)
     slug = models.SlugField(max_length=200,
                             unique=True)
-
     class Meta:
         ordering = ["name"]
         indexes = [

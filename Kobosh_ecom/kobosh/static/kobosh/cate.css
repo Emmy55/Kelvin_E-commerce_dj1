@@ -283,7 +283,7 @@
   }
     .all .prod {
       background-color: #af9331;
-      height: 20pc;
+      height: 23pc;
       border-radius: 20px;
       width: 30%;
       margin: 10px;
@@ -301,12 +301,12 @@
       color: black;
       /* align-items: center; */
       width: 100%;
-      top: -5%;
+      /* top: -5%; */
     }
 
     .all .prod p {
       position: relative;
-      top: -30px;
+      top: 10px;
     }
     .all .prod p strong {
       color: black;
@@ -320,7 +320,7 @@
       font-weight: bolder;
       width: 50%;
       position: relative;
-      top: -12%;
+      top: 3.5%;
       left: 25%;
       /* text-align: center; */
     }
@@ -344,7 +344,7 @@
     }
     .copyright{
       position: relative;
-      top: 65px;
+      top: 95px;
       height: 20px;
     }
     #arrow {

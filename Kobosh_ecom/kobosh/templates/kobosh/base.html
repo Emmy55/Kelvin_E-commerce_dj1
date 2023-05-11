@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout</title>
-    
-    <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'kobosh/hero_image.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
 </head>
 <body>
@@ -22,11 +24,14 @@
   
         <ul>
           <li style="cursor: pointer;" onclick='location.href="{% url 'kobosh:home' %}"' | escapejs >HOME</li>
-          <li style="cursor: pointer;">SHOP</li>
-
           <li style="cursor: pointer;" onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
+          <li style="cursor: pointer;">PAYMENTS</li>
+
         </ul>
-        <input type="search" id="all_search" placeholder="Search Products" />
+        <form id="search-form" action="{% url 'cart:search' %}" method="get">
+          {% csrf_token %}
+            <input type="search" name="query" id="search-input" placeholder="Search Products" />
+        </form>
         <div class="icons">
           <i class="fa-solid fa-magnifying-glass" id="search"></i>
           <img onclick='location.href="{% url 'kobosh:signup' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
@@ -130,6 +135,42 @@
     <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="{% static 'kobosh/scripts.js' %}"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var input = document.getElementById("search-input");
+          var resultsContainer = document.getElementById("search-results");
+      
+          input.addEventListener("input", function() {
+              var query = input.value;
+      
+              if (query.trim().length > 0) {
+                  fetch("/search/?query=" + encodeURIComponent(query))
+                      .then(function(response) {
+                          return response.json();
+                      })
+                      .then(function(data) {
+                          displayResults(data);
+                      });
+              } else {
+                  resultsContainer.innerHTML = "";
+              }
+          });
+      
+          function displayResults(results) {
+              var html = "";
+      
+              results.forEach(function(result) {
+                  html += "<div>" + result.title + "</div>";  // Customize based on your model
+      
+                  // Append additional data or customize the result display as needed
+              });
+      
+              resultsContainer.innerHTML = html;
+          }
+      });
+      </script>
+      
 
 </body>
 </html>

@@ -1,6 +1,4 @@
-@media screen and (max-width: 480px) {
-    
-}
+@media screen and (max-width: 480px) {}
 
 @media screen and (min-device-width: 0) and (max-device-width: 767px) {
     * {
@@ -10,14 +8,14 @@
         color: white;
     }
 
-    
+
     html {
         scroll-behavior: smooth;
     }
 
     .container {
         width: 100%;
-        height:90vh;
+        height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -105,6 +103,7 @@
         font-size: 18px;
         line-height: 29px;
     }
+
     .burger {
         display: block;
         height: 30px;
@@ -114,14 +113,16 @@
         position: relative;
         width: 10px;
     }
+
     .clipped {
         transition-timing-function: ease-in-out;
         transition: 0.4s all;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
+
     nav ul {
         position: absolute;
-        background-color:#AF9331;
+        background-color: #AF9331;
         left: 0;
         padding-top: 50px;
         z-index: 2;
@@ -163,15 +164,18 @@
     nav input:focus {
         outline: none;
     }
-    #profile{
+
+    #profile {
         display: none;
     }
+
     #cart {
         position: relative;
         left: -2pc;
         top: -54px;
         width: 91%;
     }
+
     nav .icons {
         float: right;
         /* left: 16%; */
@@ -185,7 +189,7 @@
         position: relative;
         left: -6pc;
         top: -29px;
-        z-index:1;
+        z-index: 1;
         font-size: 20px;
         color: white;
     }
@@ -260,10 +264,12 @@
         top: 0px;
         width: 100%;
     }
+
     .middle .top_middle h3 {
         font-size: 20px;
         padding: 20px 0px 0px 35px;
     }
+
     .middle .top_middle h4 {
         float: right;
         top: 23px;
@@ -272,6 +278,7 @@
         cursor: pointer;
         position: relative;
     }
+
     .all_product {
         display: flex;
         row-gap: 20px;
@@ -291,10 +298,12 @@
         background-color: white;
         height: 60%;
     }
+
     .product img {
         height: 60%;
         width: 100%;
     }
+
     #prev {
         color: white;
         height: 20px;
@@ -366,14 +375,17 @@
         width: 100%;
         background-color: #AF9331;
     }
+
     #all_img {
         display: none;
     }
+
     #all_img1 {
         position: relative;
         left: 3%;
         top: -5pc;
     }
+
     .discount_shop h1,
     .discount_shop h2,
     .discount_shop h3 {
@@ -381,9 +393,11 @@
         top: 10px;
         position: relative;
     }
+
     .discount .all_discount img {
-        width:17%;
+        width: 17%;
     }
+
     .discount .all_discount {
         display: inline;
         top: -91%;
@@ -395,6 +409,7 @@
         left: 25%;
         position: relative;
     }
+
     .discount_shop a {
         font-size: 13px;
         padding: 10px 15px 10px 15px;
@@ -434,17 +449,19 @@
 
     .all_store .all {
         height: 100px;
-        width:33%;
+        width: 33%;
         padding: 14px;
         position: relative;
         left: -11%;
     }
+
     .all_store .all h3 {
         position: relative;
         left: 30%;
         font-size: 13px;
         /* width: 100%; */
     }
+
     .all_store .all img {
         height: 8pc;
         width: 10pc;
@@ -493,10 +510,13 @@
         left: -40%;
         z-index: 5;
     }
-    .newsletter h3, .newsletter h2 {
+
+    .newsletter h3,
+    .newsletter h2 {
         font-size: 15px;
         margin-top: 13px;
     }
+
     .newsletter input[type='email'] {
         height: 46px;
         border: none;
@@ -587,6 +607,7 @@
         /* top: -20px; */
         background-repeat: no-repeat;
     }
+
     .foot_bottom ul li a {
         color: white;
         height: 1px;
@@ -673,16 +694,19 @@
             /* move the element back to the initial position */
         }
     }
-    .top_selling{
+
+    .top_selling {
         width: 93%;
-        left:3.5%;
+        left: 3.5%;
         margin-bottom: 70px;
         position: relative;
     }
+
     .top_selling .top_middle h3 {
         font-size: 20px;
         padding: 20px 0px 0px 35px;
     }
+
     .top_selling .top_middle h4 {
         float: right;
         top: 23px;
@@ -691,13 +715,17 @@
         cursor: pointer;
         position: relative;
     }
-    .top_selling .all_product .product h3,.top_selling .all_product .product p {
+
+    .top_selling .all_product .product h3,
+    .top_selling .all_product .product p {
         color: white;
     }
+
     .top_selling .all_product .product {
         height: 310px;
         background-color: #AF9331;
     }
+
     #last_hr {
         border: 1.4x solid rgb(255, 255, 255);
         z-index: 9;
@@ -706,9 +734,10 @@
         position: relative;
         width: 90%;
     }
+
     .top_selling button {
         border: none;
-        color:#AF9331;
+        color: #AF9331;
         font-weight: bolder;
         cursor: pointer;
         height: 40px;
@@ -718,6 +747,7 @@
         position: relative;
         border-radius: 20px;
     }
+
     .payment h3 {
         text-align: center;
         top: 0pc;
@@ -727,26 +757,29 @@
         position: relative;
         color: #AF9331;
     }
+
     .payment h2 {
         text-align: center;
         top: 3pc;
         width: 40%;
         font-size: 15px;
-        left:3.6%;
+        left: 3.6%;
         position: relative;
         color: #AF9331;
     }
+
     .socials i {
         top: 1.4pc;
         width: 40%;
         font-size: 17px;
         display: inline;
         padding: 10px;
-        left:50%;
+        left: 50%;
         font-size: 30px;
         position: relative;
-        color:#AF9331;
+        color: #AF9331;
     }
+
     footer {
         background-color: black;
         position: relative;
@@ -755,6 +788,7 @@
         height: 65pc;
     }
 }
+
 @media screen and (min-width:768px) {}
 
 @media screen and (min-width: 768px) and (max-width: 991px) {}
@@ -766,12 +800,15 @@
         padding: 0;
         color: white;
     }
+
     .burger {
         display: none;
     }
+
     #all_img1 {
         display: none;
     }
+
     html {
         scroll-behavior: smooth;
     }
@@ -872,8 +909,9 @@
         padding: 40px;
         top: 1px;
         position: relative;
-        left: 27%;
+        left: 23%;
     }
+
     li {
         font-weight: bolder;
         position: absolute;
@@ -888,13 +926,15 @@
         border-radius: 20px;
         border: none;
         padding: 10px;
+        padding-left: 35px;
         float: right;
         color: black;
         position: relative;
         right: 9%;
         top: -4px;
-        width: 17.9%;
-        height: 30.5px;
+        font-size: 12px;
+        width: 18%;
+        height: 33px;
     }
 
     nav input:focus {
@@ -911,8 +951,9 @@
 
     nav #search {
         position: relative;
-        left: -49%;
-        top: -10px;
+        left: -15pc;
+        top: -8px;
+        font-size: 15px;
         z-index: 2;
         color: black;
     }
@@ -928,7 +969,7 @@
         height: 19pc;
 
     }
-   
+
     .all_category {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -941,7 +982,7 @@
         width: 92%;
         height: 84%;
         scrollbar-width: none;
-        overflow:hidden;
+        overflow: hidden;
         overflow-x: scroll;
     }
 
@@ -1002,16 +1043,19 @@
     .product {
         box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.183);
         height: 355px;
+        cursor: pointer;
         border-radius: 20px;
         width: 23.7%;
         background-color: white;
 
     }
+
     .product img {
         height: 18pc;
         border-radius: 10px 10px 0px 0px;
         width: 100%;
     }
+
     #prev {
         color: black;
         top: 43%;
@@ -1019,6 +1063,7 @@
         font-size: 20px;
         position: relative;
     }
+
     #next {
         color: black;
         font-size: 20px;
@@ -1037,8 +1082,8 @@
     .ab h3,
     .ab p {
         color: #000000;
-        position:relative;
-        top:3px;
+        position: relative;
+        top: 3px;
         font-weight: bolder;
     }
 
@@ -1048,11 +1093,11 @@
 
     .ab p {
         font-size: 17px;
-        position:relative;
-        top:15px;
+        position: relative;
+        top: 15px;
 
     }
-    
+
     .discount {
         width: 93%;
         height: 300px;
@@ -1071,9 +1116,11 @@
         width: 296px;
         background-color: #AF9331;
     }
+
     .discount .all_discount img {
-        width:17%;
+        width: 17%;
     }
+
     .discount .all_discount {
         display: inline;
         top: -91%;
@@ -1085,21 +1132,26 @@
         left: 25%;
         position: relative;
     }
+
     .discount_shop h1,
     .discount_shop h2,
     .discount_shop h3 {
         top: 40px;
         position: relative;
     }
+
     .discount_shop h1 {
         font-size: 39px;
     }
+
     .discount_shop h2 {
         font-size: 20px;
     }
+
     .discount_shop h3 {
         font-size: 25px;
     }
+
     .discount_shop a {
         font-size: 17px;
         padding: 20px 30px 20px 30px;
@@ -1139,9 +1191,11 @@
     .all_store .all {
         width: 23.9%;
     }
+
     #point {
         cursor: pointer;
     }
+
     .all_store .all img {
         border-radius: 10px;
     }
@@ -1350,10 +1404,12 @@
             /* move the element back to the initial position */
         }
     }
+
     .middle .top_middle h3 {
         font-size: 27px;
         padding: 17px 0px 0px 58px;
     }
+
     .middle .top_middle h4 {
         float: right;
         top: 25px;
@@ -1361,16 +1417,19 @@
         cursor: pointer;
         position: relative;
     }
-    .top_selling{
+
+    .top_selling {
         width: 93%;
-        left:3.5%;
+        left: 3.5%;
         margin-bottom: 70px;
         position: relative;
     }
+
     .top_selling .top_middle h3 {
         font-size: 27px;
         padding: 17px 0px 0px 58px;
     }
+
     .top_selling .top_middle h4 {
         float: right;
         top: 25px;
@@ -1378,13 +1437,17 @@
         cursor: pointer;
         position: relative;
     }
-    .top_selling .all_product .product h3,.top_selling .all_product .product p {
+
+    .top_selling .all_product .product h3,
+    .top_selling .all_product .product p {
         color: white;
     }
+
     .top_selling .all_product .product {
         height: 390px;
         background-color: #AF9331;
     }
+
     #last_hr {
         border: 1.4x solid rgb(255, 255, 255);
         z-index: 9;
@@ -1393,9 +1456,10 @@
         position: relative;
         width: 90%;
     }
+
     .top_selling button {
         border: none;
-        color:#AF9331;
+        color: #AF9331;
         font-weight: bolder;
         cursor: pointer;
         height: 40px;
@@ -1404,6 +1468,7 @@
         width: 60%;
         border-radius: 20px;
     }
+
     .payment h3 {
         text-align: center;
         top: 0pc;
@@ -1413,26 +1478,29 @@
         position: relative;
         color: #AF9331;
     }
+
     .payment h2 {
         text-align: center;
         top: 1.1pc;
         width: 40%;
         font-size: 17px;
-        left:53.6%;
+        left: 53.6%;
         position: relative;
         color: #AF9331;
     }
+
     .socials i {
         top: -0.4pc;
         width: 40%;
         font-size: 17px;
         display: inline;
         padding: 10px;
-        left:81%;
+        left: 81%;
         font-size: 30px;
         position: relative;
-        color:#AF9331;
+        color: #AF9331;
     }
+
     footer {
         background-color: black;
         position: relative;
@@ -1440,5 +1508,11 @@
         overflow: hidden;
         height: 44pc;
     }
-   
+
+    form input[type='text'],
+    form input[type='email'],
+    form input[type='password'],
+    {
+        font-size: 16px;
+    }
 }

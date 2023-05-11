@@ -220,7 +220,13 @@
     .left_side .links a.active {
       background-color: #af943176;
     }
-
+    #active {
+      background-color: #3eaf3176;
+    }
+    
+    .inactive {
+      background-color: #af9431a3;
+    }
     .left_side .links a:first-child {
       border-radius: 20px 20px 0px 0px;
     }
@@ -243,6 +249,7 @@
       overflow-y: scroll;
       position: fixed;
       top: 10%;
+      left: 9px;
       overflow: hidden;
     }
 
@@ -288,10 +295,13 @@
       width: 30%;
       margin: 10px;
       position: relative;
-      
       top: 6.5pc;
     }
-
+    .all .prod button:hover {
+      background-color: black;
+      color: #AF9331;
+      cursor: pointer;
+    }
     .all .prod h3,
     .all .prod p,
     .all .prod button {

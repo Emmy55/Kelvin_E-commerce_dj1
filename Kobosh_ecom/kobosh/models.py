@@ -30,6 +30,7 @@ class Category(models.Model):
                               blank=True)
     slug = models.SlugField(max_length=200,
                             unique=True)
+    
     def save(self, *args, **kwargs):
         if self.image:
             self.image = resize_image(self.image)
@@ -86,5 +87,6 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('kobosh:product_detail',
             args=[self.id, self.slug])
+
 
 

@@ -38,28 +38,42 @@
           <hr />
           <a href="{% url 'kobosh:cate' %}">All</a>
           {% for c in categories %}
+          {% if slug == 'c.slug' %}
+          <a id="active" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+          {% endif %}
+          
           <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-
+          
           {% endfor %}
         </ul>
       </div>
     </div>
     
     <div class="all">
-      {% for c in categories %}
-      <h2 id="men">{{ c.name }}</h2>
-      {% for product in c.products.all %}
-      <div class="prod" onclick="location.href='{{ product.get_absolute_url }}'">
+      {% for product in products %}
+      <div class="prod">
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
           static "img/no_image.png" %}{% endif %}" alt="" />
         <h3>{{ product.name }}</h3>
         <p><strong> NGN {{ product.price }}</strong></p>
-        <button>Add to Cart</button>
+        <button onclick="location.href='{{ product.get_absolute_url }}'">Add to Cart</button>
       </div>
-      {% endfor %}
       {% endfor %}
     </div>
   </div>
+
+<script>
+  // Get the link element
+  const linkElement = document.querySelector('.links a');
+
+  // Check if the current URL matches the target URL or its part
+  if (window.location.pathname === "{% url 'kobosh:cate' %}") {
+    linkElement.classList.add('active');
+  } else {
+    linkElement.classList.add('inactive');
+  }
+</script>
+
 
   <script>
     btn = document.querySelector('.burger');

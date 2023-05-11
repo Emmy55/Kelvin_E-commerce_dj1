@@ -1,7 +1,7 @@
 {% extends "kobosh/base.html" %}
 {% load static %}
 {% block title %}
-{{ product.name }}
+{{ result.name }}
 {% endblock %}
 {% block 'content' %}
 
@@ -77,11 +77,11 @@
             .items {
                 width: 50%;
                 position: relative;
-                top: 10pc;
+                top: 5pc;
                 border: 1px solid rgb(233, 212, 23);
                 padding: 15px;
                 left: 25%;
-                margin-bottom:300px;
+                margin-bottom:80px;
                 height: 28pc;
                 border-radius: 20px;
             }
@@ -130,32 +130,35 @@
                 left: -66px;
                 margin: 5px;
             }
-            .right_des form {
-                position: relative;
-                left: -13px;
-            }
  
         }
     </style>
 </head>
 
 <body>
-    <div class="items">
-        <div class="items_img">
-            <img src="{% if product.image %}{{ product.image.url }}{% else %}
-            {% static 'img/no_image.png' %}{% endif %}" alt="">
-        </div>
 
-        <div class="right_des">
-            <h2>{{ product.name }}</h2>
-            <p><strong style="color: #AF9331;">NGN{{ product.price }} </strong></p>
-            <div class="des">{{ product.description }}</div>
-            <form action="{% url 'cart:cart_add' product.id %}" method="post">
-                {{ cart_product_form }}
-                {% csrf_token %}
-                <input type="submit" name="" id="" value="Add to Cart">
-            </form>
-        </div>
+    {% if results %}
+    <h3>Search Results:</h3>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.title }}</li>  <!-- Customize based on your model -->
+        {% endfor %}
+    </ul>
+{% endif %}
+
+    <div class="items">
+        {% if results %}
+        <h3>Search Results:</h3>
+        {% for result in results %}
+      <div class="prod" onclick="location.href='{{ result.get_absolute_url }}'">
+        <img src="{% if result.image %}{{ result.image.url }}{% else %}{% 
+          static "img/no_image.png" %}{% endif %}" alt="" />
+        <h3>{{ result.name }}</h3>
+        <p><strong> NGN {{ result.price }}</strong></p>
+        <button>Add to Cart</button>
+      </div>
+      {% endfor %}
+      {% endif %}
     </div>
     <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
 </body>

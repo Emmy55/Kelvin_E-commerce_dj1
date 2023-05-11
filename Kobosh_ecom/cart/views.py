@@ -5,6 +5,9 @@ from .cart import Cart
 from .forms import CartAddProductForm
 
 
+from .forms import SearchForm
+
+
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
@@ -27,3 +30,54 @@ def cart_remove(request, product_id):
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'kobosh/cart.html', {'cart': cart})
+
+
+
+
+# views.py
+from django.http import JsonResponse
+
+# def search(request):
+#     query = request.GET.get('query', '')
+#     results = []
+
+#     if query.strip():
+#         results = Product.objects.filter(name__icontains=query).values('name', 'description', 'image', 'price')  # Customize based on your model
+
+#     return render(request, 'kobosh/results.html', {'results': results})
+
+
+
+# views.py
+import re
+
+def search(request):
+    query = request.GET.get('query')
+    results = []
+
+    from bs4 import BeautifulSoup
+
+    if query:
+        # Specify the HTML file to search
+        html_file_path = 'kobosh/templates/kobosh/categories.html'
+    
+        # Read the content of the HTML file
+        with open(html_file_path, 'r') as file:
+            page_content = file.read()
+    
+        # Parse the HTML content
+        soup = BeautifulSoup(page_content, 'html.parser')
+    
+        # Find relevant elements in the parsed HTML
+        results = []
+        for element in soup.find_all('div', class_='product'):
+            name = element.find('h3').text
+            description = element.find('p', class_='description').text
+            image = element.find('img')['src']
+            price = element.find('p', class_='price').text
+    
+            # Check if the query matches any information
+            if query.lower() in (name.lower() + description.lower()):
+                results.append({'name': name, 'description': description, 'image': image, 'price': price})
+    
+    return render(request, 'kobosh/results.html', {'query': query, 'results': results})

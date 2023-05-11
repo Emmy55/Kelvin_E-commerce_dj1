@@ -12,9 +12,10 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def home(request, category_slug=None):
+def home(request,category_slug=None):
     category = None
     categories = Category.objects.all()
+
     products = Product.objects.filter(available=True)
     if category_slug:
         category = get_object_or_404(Category,
@@ -66,7 +67,7 @@ def signup(request):
 
             my_user=User.objects.create_user(uname, email, pass1)
             my_user.save()
-            return redirect('login')
+            return redirect('kobosh:login')
         
     return render(request, 'kobosh/signup.html')
 
@@ -90,12 +91,3 @@ def forgotpassword(request):
     return render(request, 'kobosh/forgotpass.html')
 
 
-def resize_image(image):
-    img = Image.open(image)
-    output_size = (800, 600)  # Set the desired size for the image
-    img.thumbnail(output_size)
-    output_io = BytesIO()
-    img.save(output_io, format='JPEG', quality=85)
-    output_io.seek(0)
-    resized_image = InMemoryUploadedFile(output_io, 'ImageField', "%s.jpg" % image.name.split('.')[0], 'image/jpeg', output_io.getvalue(), None)
-    return resized_image

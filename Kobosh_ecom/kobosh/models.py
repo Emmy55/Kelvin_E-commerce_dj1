@@ -11,15 +11,6 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
 
-def resize_image(image):
-    img = Image.open(image)
-    output_size = (200, 600)  # Set the desired size for the image
-    img.thumbnail(output_size)
-    output_io = BytesIO()
-    img.save(output_io, format='JPEG', quality=85)
-    output_io.seek(0)
-    resized_image = InMemoryUploadedFile(output_io, 'ImageField', "%s.jpg" % image.name.split('.')[0], 'image/jpeg', output_io.getvalue(), None)
-    return resized_image
 
 
 class Category(models.Model):
@@ -30,11 +21,6 @@ class Category(models.Model):
                               blank=True)
     slug = models.SlugField(max_length=200,
                             unique=True)
-    
-    def save(self, *args, **kwargs):
-        if self.image:
-            self.image = resize_image(self.image)
-        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ["name"]
@@ -69,10 +55,6 @@ class Product(models.Model):
 
     updated = models.DateTimeField(auto_now=True)
 
-    def save(self, *args, **kwargs):
-        if self.image:
-            self.image = resize_image(self.image)
-        super().save(*args, **kwargs)
     class Meta:
         ordering = ['name']
         indexes = [

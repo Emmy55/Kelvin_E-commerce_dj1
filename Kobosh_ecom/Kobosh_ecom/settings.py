@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "kobosh.apps.KoboshConfig",
     'cart.apps.CartConfig',
+    'members.apps.MembersConfig',
 ]
 
 MIDDLEWARE = [

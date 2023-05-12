@@ -2,7 +2,7 @@
 
 .create p{
     /* text-align: center; */
-    width: 50%;
+    width: 70%;
     font-size: 15px;
     left:6%;
     color: #AF9331;
@@ -107,5 +107,6 @@ label strong {
     outline: none;
   }
   .bottom {
+    width:90%;
     height: 7pc;
   }

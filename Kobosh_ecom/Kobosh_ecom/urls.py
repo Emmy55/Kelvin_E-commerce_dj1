@@ -23,6 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')), 
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls', namespace='members')), 
     path('', include('kobosh.urls', namespace='kobosh')),
 ]
 

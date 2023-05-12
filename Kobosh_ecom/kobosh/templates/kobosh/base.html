@@ -34,7 +34,7 @@
         </form>
         <div class="icons">
           <i class="fa-solid fa-magnifying-glass" id="search"></i>
-          <img onclick='location.href="{% url 'kobosh:signup' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
+          <img onclick='location.href="{% url 'members:login_user' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
           <img onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs src="{% static 'kobosh/cart.png' %}" id="cart" alt="cart" />
         </div>
       </nav>

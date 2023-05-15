@@ -13,6 +13,13 @@
 
 }
 
+.messages li {
+    position: relative;
+    left: 0;
+    font-size: 17px;
+    text-align: center;
+    color: red;
+}
 #acc {
     position: relative;
     top: 90px;
@@ -33,14 +40,23 @@ label strong {
     position: relative;
     color: #AF9331;
     left: 2%;
+    width: 100%;
     top: 20px;
+    text-align: center;
     font-size: 30px;
 }
-.account_create{
+#h2_id {
+  position: relative;
+  top: 30px;
+  left: 9px;
+  border: 1.5px solid #AF9331;
+}
+.account_create, #create_acc{
     position: relative;
-    left: .5%;
+    left: .1%;
     color: white;
     width: 96%;
+    font-size: 18px;
     border: none;
     top: 60px;
     height: 37px;
@@ -97,16 +113,49 @@ label strong {
   
 
 .all_forms .create input {
-    width: 90%;
-    color: black;
-    padding: 10px;
-    margin-bottom: 10px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: .1px solid black;
+  margin-bottom: 10px;
   }
   .all_forms .create input:focus {
-    color: #AF9331;
+    color: black;
     outline: none;
   }
+
+  .all_forms .create input[type='submit']{
+    color: black;
+    font-weight: bolder;
+  }
+  .bottom p {
+    font-weight: bolder;
+  }
   .bottom {
-    width:90%;
+    margin-bottom: 30%;
+    margin-top: 10%;
     height: 7pc;
   }
+ 
+  .bottom p {
+    text-align: center;
+    width: 87%;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    top: 50%;
+    font-size: 14px;
+}
+#create_acc{
+    background-color: rgba(236, 229, 229, 0.527);
+    color: #AF9331;
+    border: 1px solid black;
+    font-weight: bolder;
+    
+}
+#forgotpass{
+    float: right;
+    position: relative;
+    left: -17px;
+    text-decoration: underline;
+}

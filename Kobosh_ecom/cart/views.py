@@ -1,26 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.decorators.http import require_POST
 from kobosh.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
 
-
-from .forms import SearchForm
-
-
-@require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
-        cart.add(product=product,
-                quantity=cd['quantity'],
-                override_quantity=cd['override'])
-        return redirect('cart:cart_detail')   
+        cart.add(product=product, quantity=cd['quantity'], override_quantity=cd['override'])
+    return redirect('cart:cart_detail')   
 
-@require_POST
 def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
@@ -30,22 +21,6 @@ def cart_remove(request, product_id):
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'kobosh/cart.html', {'cart': cart})
-
-
-
-
-# views.py
-from django.http import JsonResponse
-
-# def search(request):
-#     query = request.GET.get('query', '')
-#     results = []
-
-#     if query.strip():
-#         results = Product.objects.filter(name__icontains=query).values('name', 'description', 'image', 'price')  # Customize based on your model
-
-#     return render(request, 'kobosh/results.html', {'results': results})
-
 
 
 # views.py

@@ -1,9 +1,7 @@
 {% extends "kobosh/base.html" %}
 {% load static %}
-{% block title %}
-{{ result.name }}
-{% endblock %}
-{% block 'content' %}
+
+{% block "content" %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <style>
+        *{
+            color:black;
+        }
+        footer{
+            display: none;
+        }
         @media screen and (min-device-width: 0) and (max-device-width: 767px) {
             .right_des {
                 position: relative;
@@ -65,11 +69,19 @@
         }
 
         @media screen and (min-width:1200px) {
-
+            *{
+            color:black;
+            }
+            footer{
+                display: none;
+            }
+            nav {
+                display:none;
+            }
             .right_des {
                 position: relative;
                 width: 50%;
-                left:1%;
+                left: 1%;
                 top: -19pc;
                 float: right;
             }
@@ -81,15 +93,15 @@
                 border: 1px solid rgb(233, 212, 23);
                 padding: 15px;
                 left: 25%;
-                margin-bottom:80px;
+                margin-bottom: 80px;
                 height: 28pc;
                 border-radius: 20px;
             }
 
             .items_img {
-                position:relative;
-                top:50px;
-                left:5%;
+                position: relative;
+                top: 50px;
+                left: 5%;
                 width: 43%;
                 height: 360px;
             }
@@ -105,7 +117,7 @@
                 /* float: right; */
                 top: 40px;
                 position: relative;
-                width: 30%;
+                width: 30%; 
                 height: 30px;
                 left: -34%;
                 border-radius: 15px;
@@ -130,36 +142,30 @@
                 left: -66px;
                 margin: 5px;
             }
- 
+           
+
         }
     </style>
 </head>
 
 <body>
 
-    {% if results %}
     <h3>Search Results:</h3>
-    <ul>
-        {% for result in results %}
-            <li>{{ result.title }}</li>  <!-- Customize based on your model -->
-        {% endfor %}
-    </ul>
-{% endif %}
-
     <div class="items">
         {% if results %}
-        <h3>Search Results:</h3>
-        {% for result in results %}
-      <div class="prod" onclick="location.href='{{ result.get_absolute_url }}'">
-        <img src="{% if result.image %}{{ result.image.url }}{% else %}{% 
-          static "img/no_image.png" %}{% endif %}" alt="" />
-        <h3>{{ result.name }}</h3>
-        <p><strong> NGN {{ result.price }}</strong></p>
-        <button>Add to Cart</button>
-      </div>
-      {% endfor %}
-      {% endif %}
+            {% for re in results %}
+                <div class="prod" onclick="location.href='{{ re.get_absolute_url }}'">
+                    <img src="{% if re.image %}{{ re.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="" />
+                    <h3>{{ re.name }}</h3>
+                    <p><strong>NGN {{ re.price }}</strong></p>
+                    <button>Add to Cart</button>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No search results found.</p>
+        {% endif %}
     </div>
+
     <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
 </body>
 

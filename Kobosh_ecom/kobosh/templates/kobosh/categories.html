@@ -55,24 +55,14 @@
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
           static "img/no_image.png" %}{% endif %}" alt="" />
         <h3>{{ product.name }}</h3>
-        <p><strong> NGN {{ product.price }}</strong></p>
+        <p><strong class="price"> NGN {{ product.price }}</strong></p>
         <button onclick="location.href='{{ product.get_absolute_url }}'">Add to Cart</button>
       </div>
       {% endfor %}
     </div>
   </div>
 
-<script>
-  // Get the link element
-  const linkElement = document.querySelector('.links a');
 
-  // Check if the current URL matches the target URL or its part
-  if (window.location.pathname === "{% url 'kobosh:cate' %}") {
-    linkElement.classList.add('active');
-  } else {
-    linkElement.classList.add('inactive');
-  }
-</script>
 
 
   <script>
@@ -93,32 +83,9 @@
       navlist.classList.toggle("clipped").checked = false;
     });
   </script>
-  <script>
-    let section = document.querySelectorAll('.prod');
-    let lists = document.querySelectorAll('a');
-    function activeLink(li) {
-      lists.forEach((item) => item.classList.remove('active'));
-      li.classList.add('active');
-    }
-    lists.forEach((item) =>
-      item.addEventListener('click', function () {
-        activeLink(this);
-      }));
 
-    window.onscroll = () => {
-      section.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
 
-        if (top >= offset && top < offset + height) {
-          const target = document.querySelector(`[href='#${id}']`).parentElement;
-          activeLink(target);
-        }
-      })
-    };
-  </script>
+  
 
   <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
 

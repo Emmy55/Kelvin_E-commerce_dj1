@@ -23,19 +23,18 @@
         </div>
   
         <ul>
-          <li style="cursor: pointer;" onclick='location.href="{% url 'kobosh:home' %}"' | escapejs >HOME</li>
-          <li style="cursor: pointer;" onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
-          <li style="cursor: pointer;">PAYMENTS</li>
+          <li onclick='location.href="{% url 'kobosh:home' %}"' | escapejs >HOME</li>
+          <li onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
+          <li onclick='location.href="{% url 'kobosh:payment' %}"' | escapejs>PAYMENTS</li>
 
         </ul>
-        <form id="search-form" action="{% url 'cart:search' %}" method="get">
-          {% csrf_token %}
+        <form id="search-form" action="{% url 'kobosh:search' %}" method="get">
             <input type="search" name="query" id="search-input" placeholder="Search Products" />
         </form>
         <div class="icons">
           <i class="fa-solid fa-magnifying-glass" id="search"></i>
-          <img onclick='location.href="{% url 'members:login_user' %}"' | escapejs src="{% static 'kobosh/profile.png' %}" alt="profile" id="profile" />
-          <img onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs src="{% static 'kobosh/cart.png' %}" id="cart" alt="cart" />
+          <i onclick='location.href="{% url 'members:login_user' %}"' | escapejs  id="profile" class="fa-solid fa-user"></i>
+          <i onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs id="cart" class="fa-solid fa-cart-shopping"></i>
         </div>
       </nav>
       

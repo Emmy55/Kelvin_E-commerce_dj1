@@ -3,7 +3,6 @@ from django.urls import reverse
 # Create your models here.
 
 
-
 from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile

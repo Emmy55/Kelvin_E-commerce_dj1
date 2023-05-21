@@ -14,6 +14,9 @@
     }
 
    
+nav {
+  display:none;
+}
 
     .clipped {
       transition-timing-function: ease-in-out;
@@ -75,7 +78,7 @@
       position: absolute;
       display: block;
       background-color: #AF9331;
-      z-index: 20;
+      z-index: 90;
       padding: 12px;
       font-size: 30px;
     }
@@ -198,6 +201,11 @@
   }
 
   @media screen and (min-width:1200px) {
+
+    nav ul li:nth-child(2){
+      color: #000000;
+      font-size:18px;
+    }
     .left_side .links a {
       text-decoration: none;
       color: rgb(0, 0, 0);

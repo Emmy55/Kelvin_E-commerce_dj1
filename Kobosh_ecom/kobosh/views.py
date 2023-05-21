@@ -11,6 +11,10 @@ from django.contrib.auth import authenticate,login, logout
 from django.contrib.auth.decorators import login_required
 
 
+import re
+from bs4 import BeautifulSoup
+from django.db.models import Q
+
 
 def home(request,category_slug=None):
     category = None
@@ -45,6 +49,31 @@ def product_detail(request, id, slug):
                     'cart_product_form': cart_product_form})
 
 
+def payment(request):
+    return render(request, 'kobosh/payments.html')
 
 
+
+
+def search(request):
+    query = request.GET.get('query')
+    results = []
+
+    if query:
+        # Search the database for products matching the query
+        products = Product.objects.filter(
+            Q(name__icontains=query) | Q(description__icontains=query)
+        )
+
+        # Iterate over the retrieved products
+        for product in products:
+            name = product.name
+            image = product.image.url
+            price = product.price
+
+            # Append the product information to the results list
+            results.append({'name': name, 'image': image, 'price': price})
+            print(results)
+
+    return render(request, 'kobosh/result.html', {'results': results})
 

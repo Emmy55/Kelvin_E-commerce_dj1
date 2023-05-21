@@ -1,6 +1,7 @@
 @media screen and (max-width: 480px) {}
 
-@media screen and (min-device-width: 0) and (max-device-width: 767px) {
+/* @media screen and (min-device-width: 0) and (max-device-width: 767px) { */
+    @media only screen and (max-width: 767px) {
     * {
         margin: 0;
         font-family: 'Montserrat';
@@ -175,7 +176,9 @@
         top: -54px;
         width: 91%;
     }
-
+    .fa-cart-shopping, .fa-user {
+        font-size: 25px;
+    }
     nav .icons {
         float: right;
         /* left: 16%; */
@@ -793,14 +796,18 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {}
 
-@media screen and (min-width:1200px) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
     * {
         margin: 0;
         font-family: 'Montserrat';
         padding: 0;
         color: white;
     }
-
+    .fa-cart-shopping, .fa-user {
+        font-size: 25px;
+        position: relative;
+        top: 5px;
+    }
     .burger {
         display: none;
     }
@@ -906,6 +913,7 @@
         font-weight: bolder;
         position: absolute;
         display: inline;
+        cursor: pointer;
         padding: 40px;
         top: 1px;
         position: relative;
@@ -951,8 +959,8 @@
 
     nav #search {
         position: relative;
-        left: -15pc;
-        top: -8px;
+        left: -15.6pc;
+        /* top: -8px; */
         font-size: 15px;
         z-index: 2;
         color: black;
@@ -1511,7 +1519,7 @@
 
     form input[type='text'],
     form input[type='email'],
-    form input[type='password'],
+    form input[type='password']
     {
         font-size: 16px;
     }

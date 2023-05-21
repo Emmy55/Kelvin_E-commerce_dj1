@@ -39,11 +39,14 @@ label strong {
     width: 70%;
     position: relative;
     color: #AF9331;
-    left: 2%;
+    left: -3%;
     width: 100%;
     top: 20px;
     text-align: center;
     font-size: 30px;
+}
+.account_create, #create_acc{
+  cursor: pointer;
 }
 #h2_id {
   position: relative;

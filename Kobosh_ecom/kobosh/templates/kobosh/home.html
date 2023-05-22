@@ -8,7 +8,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 />
-
+<link rel="stylesheet" href="{% static 'kobosh/modern.css' %}">
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <style>
   nav ul li:nth-child(1){
@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-  <div class="container" id="cont">
+  <div class="cont" id="cont">
     <div class="swiper">
       <!-- Additional required wrapper -->
       <div class="hero_text">
@@ -82,7 +82,7 @@
 
   <div class="all_product">
     {% for product in products %}
-    <div class="product" onclick="location.href='{{ product.get_absolute_url }}' ">
+    <div class="animated product" onclick="location.href='{{ product.get_absolute_url }}' ">
       <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
         static "img/no_image.png" %}{% endif %}" alt="" />
       <div class="ab">
@@ -146,6 +146,7 @@
     {% endfor %}
   </div>
 </div>
+<script src="{% static 'kobosh/modern.js' %}"></script>
 <script
     src="https://kit.fontawesome.com/9da17deac8.js"
     crossorigin="anonymous"
@@ -153,6 +154,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="{% static 'kobosh/swiper.js' %}"></script>
     <script src="{% static 'kobosh/scripts.js' %}"></script>
+
 <script>
   const scrollLeft = document.querySelector("#prev");
       const scrollRight = document.querySelector("#next");

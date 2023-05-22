@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="center-wrapper">
 	<div class="content">
-
+		<form action="{% url 'kobosh:payment' %}">
 	{% for item in cart %}
 	{% with product=item.product %}
 	<div class="bag-product">
@@ -61,13 +61,13 @@
 			<input type="text" name="promo-checkbox" placeholder="Enter your promo code here" checked>
 			<button class="apply">Apply</button>
 		</div>
-		<button class="btn-go-checkout">
+		<button type="submit" class="btn-go-checkout">
 			<i class="fas fa-lock"></i>
 			<span>Go to Checkout</span>
 		</button>
 	</div>
-	<div class="help">
-	</div>
+</form>
+	
 </div>
 </div>
 <div class="bg"></div>

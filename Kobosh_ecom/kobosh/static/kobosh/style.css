@@ -1,7 +1,7 @@
 @media screen and (max-width: 480px) {}
 
 /* @media screen and (min-device-width: 0) and (max-device-width: 767px) { */
-    @media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     * {
         margin: 0;
         font-family: 'Montserrat';
@@ -176,9 +176,12 @@
         top: -54px;
         width: 91%;
     }
-    .fa-cart-shopping, .fa-user {
+
+    .fa-cart-shopping,
+    .fa-user {
         font-size: 25px;
     }
+
     nav .icons {
         float: right;
         /* left: 16%; */
@@ -803,11 +806,14 @@
         padding: 0;
         color: white;
     }
-    .fa-cart-shopping, .fa-user {
+
+    .fa-cart-shopping,
+    .fa-user {
         font-size: 25px;
         position: relative;
         top: 5px;
     }
+
     .burger {
         display: none;
     }
@@ -882,7 +888,10 @@
         border-radius: 50px;
         text-decoration: none;
     }
-
+    .hero_text a:hover {
+        color: black;
+        text-decoration: none;
+    }
     nav {
         z-index: 12;
         width: 100%;
@@ -891,6 +900,14 @@
         height: 60px;
         left: 0px;
         top: 0px;
+    }
+    nav ul li:hover, .fa-user:hover, .fa-cart-shopping:hover {
+        color: #0000005f;
+    }
+    a:hover,
+    a:focus {
+        color: #af9331;
+        text-decoration: underline
     }
 
     .logo {
@@ -1519,8 +1536,7 @@
 
     form input[type='text'],
     form input[type='email'],
-    form input[type='password']
-    {
+    form input[type='password'] {
         font-size: 16px;
     }
 }

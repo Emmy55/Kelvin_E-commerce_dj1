@@ -1,10 +1,7 @@
 {% extends 'kobosh/base.html' %}
 
 {% load static %}
-<head>
-    <link rel="stylesheet" href="{% static 'kobosh/payments.css' %}">
 
-</head>
 {% block 'content' %}
 
 <!DOCTYPE html>
@@ -14,12 +11,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <link rel="stylesheet" href="{% static 'kobosh/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'kobosh/payments.css' %}">
     <!------ Include the above in your HEAD tag ---------->
     <title>Document</title>
-    
+
 </head>
 
 <body>
@@ -170,7 +167,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="">
                                     <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
                                 </div>
                             </div>
@@ -181,11 +178,9 @@
 
             </form>
         </div>
-        <div class="row cart-footer">
-
-        </div>
     </div>
 </body>
-{% endblock %}
+
 
 </html>
+{% endblock %}

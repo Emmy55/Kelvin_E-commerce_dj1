@@ -2,174 +2,228 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{% static 'kobosh/hero_image.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'kobosh/hero_image.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
 </head>
+
 <body>
-    <nav>
-        <div class="burger">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="logo">
-          <h2>BOKOSH</h2>
-        </div>
-  
-        <ul>
-          <li onclick='location.href="{% url 'kobosh:home' %}"' | escapejs >HOME</li>
-          <li onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
-          <li onclick='location.href="{% url 'kobosh:payment' %}"' | escapejs>PAYMENTS</li>
+  <nav>
+    <div class="burger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="logo">
+      <h2>BOKOSH</h2>
+    </div>
 
-        </ul>
-        <form id="search-form" action="{% url 'kobosh:search' %}" method="get">
-            <input type="search" name="query" id="search-input" placeholder="Search Products" />
+    <ul>
+      <li onclick='location.href="{% url 'kobosh:home' %}"' | escapejs>HOME</li>
+      <li onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
+      <li onclick='location.href="{% url 'kobosh:payment' %}"' | escapejs>PAYMENTS</li>
+
+    </ul>
+    <form id="search-form" action="{% url 'kobosh:search' %}" method="get">
+      <input type="search" name="query" id="search-input" placeholder="Search Products" />
+    </form>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass" id="search"></i>
+      <i onclick='location.href="{% url 'members:login_user' %}"' | escapejs id="profile" class="fa-solid fa-user"></i>
+      <i onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs id="cart"
+        class="fa-solid fa-cart-shopping"></i>
+    </div>
+  </nav>
+
+
+
+
+  {% block 'content' %}
+
+
+
+  {% endblock %}
+
+
+  <footer>
+    <div class="foot_head">
+      <div class="logo">
+        <h2>BOKOSH</h2>
+      </div>
+      <div class="newsletter">
+        <h3>We love to keep you updated with our new offers</h3>
+        <h2>Subscribe to our newsletter now!</h2>
+        <form action="">
+          <i class="fa-solid fa-envelope" id="new_mail"></i>
+          <input type="email" placeholder="Enter Your Email" />
+          <input id="subtle" type="submit" value="SUBSCRIBE NOW" />
         </form>
-        <div class="icons">
-          <i class="fa-solid fa-magnifying-glass" id="search"></i>
-          <i onclick='location.href="{% url 'members:login_user' %}"' | escapejs  id="profile" class="fa-solid fa-user"></i>
-          <i onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs id="cart" class="fa-solid fa-cart-shopping"></i>
-        </div>
-      </nav>
-      
+      </div>
+    </div>
+    <div class="foot_bottom">
+      <div class="bt_left">
+        <h3>CATEGORIES LINKS</h3>
+        <hr>
+        <ul>
+          <li><a href=".">Men Collection</a></li>
+          <li><a href=".">Women Collection</a></li>
+          <li><a href=".">Kids Collection</a></li>
+          <li><a href=".">Fashion Accessories</a></li>
+          <li><a href=".">Other Categories</a></li>
+        </ul>
 
-
-
-      {% block 'content' %}
-
-
-
-      {% endblock %}
-
-
-      <footer>
-        <div class="foot_head">
-          <div class="logo">
-            <h2>BOKOSH</h2>
-          </div>
-          <div class="newsletter">
-            <h3>We love to keep you updated with our new offers</h3>
-            <h2>Subscribe to our newsletter now!</h2>
-            <form action="">
-              <i class="fa-solid fa-envelope" id="new_mail"></i>
-              <input type="email" placeholder="Enter Your Email" />
-              <input id="subtle" type="submit" value="SUBSCRIBE NOW" />
-            </form>
-          </div>
-        </div>
-        <div class="foot_bottom">
-          <div class="bt_left">
-            <h3>CATEGORIES LINKS</h3>
-            <hr>
-            <ul>
-              <li><a href=".">Men Collection</a></li>
-              <li><a href=".">Women Collection</a></li>
-              <li><a href=".">Kids Collection</a></li>
-              <li><a href=".">Fashion Accessories</a></li>
-              <li><a href=".">Other Categories</a></li>
-            </ul>
-  
-            <ul class="right">
-              <li><a href=".">Phones & Gadgets</a></li>
-              <li><a href=".">Laptops & Accessories</a></li>
-              <li><a href=".">TV & Electronics</a></li>
-              <li><a href=".">Home Appliances</a></li>
-              <li><a href=".">Furniture & Beddings</a></li>
-            </ul>
-          </div>
-          <div class="bt_middle">
-            <h3>OTHER LINKS</h3>
-            <hr />
-            <ul>
-              <li><a href=".">Home</a></li>
-              <li><a href=".">About Us</a></li>
-              <li><a href=".">Shop</a></li>
-              <li><a href=".">Account</a></li>
-              <li><a href=".">Terms & Conditions</a></li>
-            </ul>
-          </div>
-          <div class="bt_right">
-            <h3>HOW CAN BOKOSH HELP YOU</h3>
-            <hr />
-            <ul>
-              <li><a href=".">Delivery Anywhere in Nigeria</a></li>
-              <li><a href=".">Shopping Online</a></li>
-              <li><a href=".">Return & Refund Policy</a></li>
-              <li><a href=".">Report a Problem</a></li>
-              <li><a href=".">Our Offices & Warehouse</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-      <hr id="last_hr" />
-      <div class="payment">
-        <h3>PAYMENTS METHODS</h3>
-        <h2>CONNECT WITH US</h2>
-        <div class="socials">
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-        <!-- <img src="" alt="">
+        <ul class="right">
+          <li><a href=".">Phones & Gadgets</a></li>
+          <li><a href=".">Laptops & Accessories</a></li>
+          <li><a href=".">TV & Electronics</a></li>
+          <li><a href=".">Home Appliances</a></li>
+          <li><a href=".">Furniture & Beddings</a></li>
+        </ul>
+      </div>
+      <div class="bt_middle">
+        <h3>OTHER LINKS</h3>
+        <hr />
+        <ul>
+          <li><a href=".">Home</a></li>
+          <li><a href=".">About Us</a></li>
+          <li><a href=".">Shop</a></li>
+          <li><a href=".">Account</a></li>
+          <li><a href=".">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="bt_right">
+        <h3>HOW CAN BOKOSH HELP YOU</h3>
+        <hr />
+        <ul>
+          <li><a href=".">Delivery Anywhere in Nigeria</a></li>
+          <li><a href=".">Shopping Online</a></li>
+          <li><a href=".">Return & Refund Policy</a></li>
+          <li><a href=".">Report a Problem</a></li>
+          <li><a href=".">Our Offices & Warehouse</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <hr id="last_hr" />
+  <div class="payment">
+    <h3>PAYMENTS METHODS</h3>
+    <h2>CONNECT WITH US</h2>
+    <div class="socials">
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <!-- <img src="" alt="">
           <img src="" alt="">
           <img src="" alt=""> -->
-      </div>
-      <div class="copyright">
-        <p>Copyright &copy; Bokosh 2023</p>
-  
-        <i
-          onclick="location.href='.'"
-          class="fa-solid fa-arrow-up"
-          id="arrow"
-        ></i>
-      </div>
+  </div>
+  <div class="copyright">
+    <p>Copyright &copy; Bokosh 2023</p>
 
-    
-    <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="{% static 'kobosh/scripts.js' %}"></script>
+    <i onclick="location.href='.'" class="fa-solid fa-arrow-up" id="arrow"></i>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          var input = document.getElementById("search-input");
-          var resultsContainer = document.getElementById("search-results");
-      
-          input.addEventListener("input", function() {
-              var query = input.value;
-      
-              if (query.trim().length > 0) {
-                  fetch("/search/?query=" + encodeURIComponent(query))
-                      .then(function(response) {
-                          return response.json();
-                      })
-                      .then(function(data) {
-                          displayResults(data);
-                      });
-              } else {
-                  resultsContainer.innerHTML = "";
-              }
-          });
-      
-          function displayResults(results) {
-              var html = "";
-      
-              results.forEach(function(result) {
-                  html += "<div>" + result.title + "</div>";  // Customize based on your model
-      
-                  // Append additional data or customize the result display as needed
-              });
-      
-              resultsContainer.innerHTML = html;
-          }
+
+  <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="{% static 'kobosh/scripts.js' %}"></script>
+  <script>
+
+      var body = document.getElementsByTagName('body')[0];
+      var elementToShow = document.getElementById("search-input");
+      var button = document.getElementById("search");
+      var cart = document.getElementById("cart");
+
+      // body.addEventListener("click", function () {
+      //   if (elementToShow.style.display !== "none") {
+      //     elementToShow.style.display = "none";
+      //   }
+      // });
+
+      button.addEventListener("click", function () {
+        elementToShow.style.display = "block";
+        cart.style.display = "none";
       });
-      </script>
-      
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var input = document.getElementById("search-input");
+      var resultsContainer = document.getElementById("search-results");
+
+      input.addEventListener("input", function () {
+        var query = input.value;
+
+        if (query.trim().length > 0) {
+          fetch("/search/?query=" + encodeURIComponent(query))
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              displayResults(data);
+            });
+        } else {
+          resultsContainer.innerHTML = "";
+        }
+      });
+
+      function displayResults(results) {
+        var html = "";
+
+        results.forEach(function (result) {
+          html += "<div>" + result.title + "</div>";  // Customize based on your model
+
+          // Append additional data or customize the result display as needed
+        });
+
+        resultsContainer.innerHTML = html;
+      }
+    });
+  </script>
+
+<script>
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+var body = document.querySelector('body');
+
+
+
+
+
+
+btn = document.querySelector(".burger");
+
+navlist = document.querySelector("ul");
+
+bod = document.querySelector("#head");
+
+btn1 = document.querySelector(".burger1");
+
+  // Add a click event listener to the body element
+document.addEventListener('click', function(event) {
+// Check if the click target is not inside the hamburger menu
+if (navlist.contains(event.target) || btn.contains(event.target)) {
+return;
+// If it's not, close the menu by removing the 'open' class
+// btn.classList.remove('navlist');
+// navlist.style.display = 'none';
+}
+});
+btn.addEventListener("click", () => {
+navlist.classList.toggle("clipped").checked;
+});
+ul = document.getElementById("hamburger");
+
+ul.addEventListener("click", () => {
+navlist.classList.toggle("clipped").checked = false;
+});
+
+</script>
 
 </body>
+
 </html>

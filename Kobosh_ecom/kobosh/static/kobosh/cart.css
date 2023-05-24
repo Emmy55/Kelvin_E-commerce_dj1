@@ -44,8 +44,6 @@
   display: none;
 }
 
-
-
 .logo {
   font-family: "Space Mono", sans-serif;
 }
@@ -106,11 +104,11 @@ button {
   font-size: 0.8rem;
 }
 
-.bag-total h1 {
-  font-size: 1.6rem;
+.bag-total .description h1  {
+  font-size: 1.0rem;
 }
 
-.bag-total h2 {
+.bag-total .description h2 {
   font-size: 1.4rem;
 }
 

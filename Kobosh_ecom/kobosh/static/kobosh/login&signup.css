@@ -48,6 +48,9 @@ label strong {
 .account_create, #create_acc{
   cursor: pointer;
 }
+input {
+  color: black;
+}
 #h2_id {
   position: relative;
   top: 30px;

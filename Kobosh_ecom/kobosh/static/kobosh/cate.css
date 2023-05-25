@@ -15,7 +15,7 @@
 
    
 nav {
-  display:none;
+  /* display:none; */
 }
 
     .clipped {
@@ -74,12 +74,13 @@ nav {
       display: none;
     }
 
-    .burger {
+    .hamburger {
       position: absolute;
       display: block;
       background-color: #AF9331;
       z-index: 90;
       padding: 12px;
+      top: 10pc;
       font-size: 30px;
     }
       
@@ -269,7 +270,7 @@ nav {
       margin-bottom: 90%;
     }
 
-    .burger {
+    .hamburger {
       display: none;
     }
 

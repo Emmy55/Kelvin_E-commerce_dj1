@@ -24,8 +24,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')), 
     path('members/', include('django.contrib.auth.urls')),
-    path('', include('members.urls', namespace='members')), 
-    path('home/', include('kobosh.urls', namespace='kobosh')),
+    path('members/', include('members.urls', namespace='members')), 
+    path('', include('kobosh.urls', namespace='kobosh')),
 ]
 
 if settings.DEBUG:

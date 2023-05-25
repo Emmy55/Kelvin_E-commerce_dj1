@@ -146,10 +146,25 @@
       //   }
       // });
 
+      body.addEventListener("click", function (event) {
+  if (!elementToShow.contains(event.target)) {
+    elementToShow.style.display = "none";
+    cart.style.display = "block";
+    button.style.display = "block";
+  }
+});
+
+
       button.addEventListener("click", function () {
         elementToShow.style.display = "block";
         cart.style.display = "none";
       });
+
+
+
+
+
+
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {

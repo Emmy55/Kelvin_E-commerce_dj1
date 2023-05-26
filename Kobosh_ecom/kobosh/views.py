@@ -31,6 +31,8 @@ def home(request,category_slug=None):
         'products': products}
     if request.resolver_match.url_name == 'home':
         template_name = 'kobosh/home.html'
+    elif request.resolver_match.url_name == 'thebasement':
+        template_name = 'kobosh/base.html'
     else:
         template_name = 'kobosh/categories.html'
     return render(request, template_name, context)

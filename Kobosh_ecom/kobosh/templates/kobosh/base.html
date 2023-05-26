@@ -30,8 +30,14 @@
 
     <ul>
       <li onclick='location.href="{% url 'kobosh:home' %}"' | escapejs>HOME</li>
-      <li onclick='location.href="{% url 'kobosh:cate' %}"' | escapejs>ALL CATEGORIES</li>
-      <li onclick='location.href="{% url 'kobosh:payment' %}"' | escapejs>PAYMENTS</li>
+      <select name="" id="mySelect"> 
+        <option value="{% url 'kobosh:cate' %}" onclick='location.href=""' | escapejs>CATEGORIES</option>
+
+        {% for c in categories %}
+        <option value="{{ c.get_absolute_url }}" onclick='location.href=""' | escapejs>{{ c.name }}</option>
+        {% endfor %}
+      </select>
+      <li id="pays" onclick='location.href="{% url 'kobosh:payment' %}"' | escapejs>PAYMENTS</li>
 
     </ul>
     <form id="search-form" action="{% url 'kobosh:search' %}" method="get">
@@ -132,6 +138,29 @@
 
     <i onclick="location.href='.'" class="fa-solid fa-arrow-up" id="arrow"></i>
   </div>
+
+
+
+  <!-- <script>
+    let selectElement = document.getElementById('mySelect');
+    selectElement.addEventListener('mouseover', function() {
+      this.size = this.length; // Set size to display all options
+    });
+
+    selectElement.addEventListener('mouseout', function() {
+      this.size = 1; // Reset size to default
+    });
+  </script> -->
+
+  <script>
+    let selectElement = document.getElementById('mySelect');
+    selectElement.addEventListener('change', function() {
+      const selectedValue = this.value;
+      if (selectedValue !== '') {
+        window.location.href = selectedValue;
+      }
+    });
+  </script>
 
 
   <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
@@ -262,11 +291,11 @@ btn.addEventListener("click", (event) => {
 
 });
 
-body.addEventListener("click", (event) => {
-      event.stopPropagation();
+// body.addEventListener("click", (event) => {
+//       event.stopPropagation();
 
-    navlist.classList.toggle("clipped").checked = false;
-});
+//     navlist.classList.toggle("clipped").checked = false;
+// });
 
 </script>
 

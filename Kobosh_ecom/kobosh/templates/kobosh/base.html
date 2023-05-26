@@ -17,9 +17,13 @@
 
 <body>
   <nav>
+    
     <div class="burger">
       <i class="fa-solid fa-bars"></i>
+
+      
     </div>
+
     <div class="logo" id="nav-logo">
       <h2>BOKOSH</h2>
     </div>
@@ -248,23 +252,20 @@ bod = document.querySelector("#head");
 
 btn1 = document.querySelector(".burger1");
 
-  // Add a click event listener to the body element
-document.addEventListener('click', function(event) {
-// Check if the click target is not inside the hamburger menu
-if (navlist.contains(event.target) || btn.contains(event.target)) {
-return;
-// If it's not, close the menu by removing the 'open' class
-// btn.classList.remove('navlist');
-// navlist.style.display = 'none';
-}
-});
-btn.addEventListener("click", () => {
-navlist.classList.toggle("clipped").checked;
-});
-ul = document.getElementById("hamburger");
 
-ul.addEventListener("click", () => {
-navlist.classList.toggle("clipped").checked = false;
+btn.addEventListener("click", (event) => {
+  btn.innerHTML = btn.innerHTML.includes("fa-xmark")
+    ? `<i class="fa-solid fa-bars"></i>`
+    : `<i class="fa-sharp fa-solid fa-xmark"></i>`;
+      navlist.classList.toggle("clipped").checked;
+      event.stopPropagation();
+
+});
+
+body.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+    navlist.classList.toggle("clipped").checked = false;
 });
 
 </script>

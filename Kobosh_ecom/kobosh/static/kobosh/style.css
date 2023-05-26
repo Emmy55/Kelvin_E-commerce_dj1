@@ -150,13 +150,13 @@
         display: none;
         border-radius: 20px;
         border: none;
-        padding-left: 10px;
+        /* padding-left: 10px; */
         float: right;
         color: black;
         position: absolute;
         background-color: white;
         left: 65%;
-        top: 14px;
+        /* top: 14px; */
         width: 30.9%;
         height: 30.5px;
         z-index: 18;
@@ -962,12 +962,11 @@
         border-radius: 20px;
         border: none;
         padding: 10px;
-        padding-left: 35px;
+        /* padding-left: 35px; */
         float: right;
         color: black;
         position: relative;
         /* right: 9%; */
-        /* top: -36px; */
         font-size: 12px;
         width: 18%;
         height: 33px;
@@ -1000,13 +999,13 @@
 
     nav #profile {
         position: relative;
-        left: .8pc;
+        left: -2.8pc;
         top: -51px;
     }
 
-    #cart {
+    nav #cart {
         position: relative;
-        left: -3pc;
+        /* left: -3pc; */
         top: -78px;
         width: 91%;
     }
@@ -1814,7 +1813,7 @@
 
     nav #search {
         position: relative;
-        left: -65%;
+        left: -345%;
         /* top: -8px; */
         font-size: 15px;
         z-index: 2;

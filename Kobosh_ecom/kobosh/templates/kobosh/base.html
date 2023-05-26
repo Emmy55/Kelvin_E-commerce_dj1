@@ -20,7 +20,7 @@
     <div class="burger">
       <i class="fa-solid fa-bars"></i>
     </div>
-    <div class="logo">
+    <div class="logo" id="nav-logo">
       <h2>BOKOSH</h2>
     </div>
 
@@ -59,9 +59,9 @@
       <div class="newsletter">
         <h3>We love to keep you updated with our new offers</h3>
         <h2>Subscribe to our newsletter now!</h2>
-        <form action="">
+        <form action="" id="form">
           <i class="fa-solid fa-envelope" id="new_mail"></i>
-          <input type="email" placeholder="Enter Your Email" />
+          <input id="sub" type="email" placeholder="Enter Your Email" />
           <input id="subtle" type="submit" value="SUBSCRIBE NOW" />
         </form>
       </div>
@@ -136,35 +136,65 @@
   <script>
 
       var body = document.getElementsByTagName('body')[0];
-      var elementToShow = document.getElementById("search-input");
+      var elementToShow = document.querySelector("nav input");
+      var icons = document.querySelector(".icons");
       var button = document.getElementById("search");
+      var profile = document.getElementById("profile");
       var cart = document.getElementById("cart");
-
+      const mediaPhone = window.matchMedia('(max-width: 768px)')
+      const mediaTab = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
       // body.addEventListener("click", function () {
       //   if (elementToShow.style.display !== "none") {
       //     elementToShow.style.display = "none";
       //   }
       // });
 
-      body.addEventListener("click", function (event) {
-  if (!elementToShow.contains(event.target)) {
-    elementToShow.style.display = "none";
-    cart.style.display = "block";
-    button.style.display = "block";
-  }
+
+      if (mediaPhone.matches) {
+        body.addEventListener("click", function (event) {
+            if (!elementToShow.contains(event.target)) {
+              elementToShow.style.display = "none";
+              cart.style.display = "block";
+              button.style.display = "block";
+              button.style.left = "-75px";
+              profile.style.display = "block";
+              icons.style.left = '-27px';
+            }
 });
 
-
-      button.addEventListener("click", function () {
+button.addEventListener("click", function(event) {
+        event.stopPropagation();
         elementToShow.style.display = "block";
         cart.style.display = "none";
+        profile.style.display = "none";
+        button.style.display = "none";
+        elementToShow.style.top = '.9pc'
+        elementToShow.style.left = '15pc'
       });
+      }
+      if (mediaTab.matches) {
+  
+        body.addEventListener("click", function (event) {
+            if (!elementToShow.contains(event.target)) {
+              elementToShow.style.display = "none";
+              cart.style.display = "block";
+              button.style.left = "-96px";
+              button.style.display = "block";
+              profile.style.display = "block";
+              icons.style.left = '-73px'
+            }
+});
 
-
-
-
-
-
+button.addEventListener("click", function(event) {
+        event.stopPropagation();
+        elementToShow.style.display = "block";
+        cart.style.display = "none";
+        profile.style.display = "none";
+        button.style.display = "none";
+        elementToShow.style.top = '-2.4pc'
+        elementToShow.style.left = '-4pc'
+      });
+} 
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {

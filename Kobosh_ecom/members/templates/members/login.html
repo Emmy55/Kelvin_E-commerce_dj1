@@ -14,6 +14,16 @@
         .fa-user {
             color: #000000;
         }
+        @media screen and (max-width:767px) {
+            .bottom {
+                position: relative;
+                left: 2pc;
+            }
+            input {
+                position: relative;
+                left: -6px;
+            }
+        }
     </style>
 </head>
 
@@ -46,7 +56,7 @@
                 <input style="width: 95.4%;" type="submit" value="Login" class="account_create" name="passowrd">
 
             </form>
-            <div class="bottom" style="left: 13px; position: relative;">
+            <div class="bottom" style="left: 9px; position: relative;">
                 <p style="color: black;">Don't have an account?</p>
                 <input onclick="location.href='{% url 'members:signup_user' %}'" id="create_acc" type="submit"
                     value="Create an Account">

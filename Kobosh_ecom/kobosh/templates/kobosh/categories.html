@@ -55,7 +55,7 @@
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
           static "img/no_image.png" %}{% endif %}" alt="" />
         <h3>{{ product.name }}</h3>
-        <p><strong class="price"> NGN {{ product.price }}</strong></p>
+        <p><strong class="price"> &#8358; {{ product.price }}</strong></p>
         <button onclick="location.href='{{ product.get_absolute_url }}'">Add to Cart</button>
       </div>
       {% endfor %}

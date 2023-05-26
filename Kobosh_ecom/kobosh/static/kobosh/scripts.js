@@ -12,17 +12,17 @@ function handleClick(element) {
    });
 
    // Listen to clicks on the rest of the page 
-   document.addEventListener("click", function (event) {
-      // Check if the clicked element is not the specified element or its descendant
-      if (!element.contains(event.target)) {
-         search.style.display = 'block'
-         search.style.top = '7px'
-         search.style.position = 'absolute'
-         search.style.left = '-59px'
+//    document.addEventListener("click", function (event) {
+//       // Check if the clicked element is not the specified element or its descendant
+//       if (!element.contains(event.target)) {
+//          search.style.display = 'block'
+//          search.style.top = '7px'
+//          search.style.position = 'absolute'
+//          search.style.left = '-59px'
 
-         // Do something when clicked outside of the element
-      }
-   });
+//          // Do something when clicked outside of the element
+//       }
+//    });
 }
 
 // Call the function with the specified element

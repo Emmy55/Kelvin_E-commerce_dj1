@@ -16,13 +16,41 @@
     <link rel="stylesheet" href="{% static 'kobosh/payments.css' %}">
     <!------ Include the above in your HEAD tag ---------->
     <title>Document</title>
+    <style>
+        @media screen and (max-width:767px) {
+            .icons {
+                position: relative;
+                top: 40pc;
+            }
+            #sub {
+                font-size: 14px;
+                width: 50%;
+                position: relative;
+                /* top: -1.6pc; */
+            }
+            #subtle {
+                width: 29%;
+                font-size: 10px;
+                position: relative;
+                left: -24.7px;
+                top: 20px;
+            }
+            .bt_right h3 {
+                margin-top: 0px;
+                height: 30px;
+                padding-top: 10px;
+                z-index: 9999;
+            }
+            
+        }
+    </style>
 
 </head>
 
 <body>
 
     <div class="container wrapper">
-        <div class="row cart-body">
+        <div>
             <form class="form-horizontal" method="post" action="">
 
                 <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6"> -->

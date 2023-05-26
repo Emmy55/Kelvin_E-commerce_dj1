@@ -132,6 +132,7 @@ input {
 
   .all_forms .create input[type='submit']{
     color: black;
+    border: none;
     font-weight: bolder;
   }
   .bottom p {
@@ -164,4 +165,27 @@ input {
     position: relative;
     left: -17px;
     text-decoration: underline;
+}
+
+
+@media screen and (max-width:767px) {
+  .create {
+      width: 80%;
+      position: relative;
+      /* left: 21px; */
+  }
+  .create h2 {
+      font-size: 22px;
+  }
+  input[type='submit']{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+footer .foot_head .newsletter input[type='submit'] { 
+  position: relative;
+  top: 20px;
+
+}
 }

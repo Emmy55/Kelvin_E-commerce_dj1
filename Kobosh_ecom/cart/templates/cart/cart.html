@@ -9,14 +9,6 @@
 		.fa-cart-shopping {
 			color: #000000;
 		}
-
-		.bag-total .description h1 {
-			font-size: 10px;
-		}
-
-		.bag-total .description h2 {
-			font-size: 1.4rem;
-		}
 	</style>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +26,7 @@
 					<h1>{{ product.name }}</h1>
 					<p class="description-text">{{ product.description }}</p>
 					<!-- <p style="margin-bottom: 0.5rem;">One Size</p> -->
-					<h2>NGN {{ item.price }}</h2>
+					<h2>&#8358; {{ item.price }}</h2>
 					<div class="quantity-wrapper">
 						<div>
 							<label for="quantity" style="margin-right: 0.5rem;">Quantity: {{ item.quantity }}</label>

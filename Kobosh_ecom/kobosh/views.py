@@ -33,6 +33,20 @@ def home(request,category_slug=None):
         template_name = 'kobosh/home.html'
     elif request.resolver_match.url_name == 'thebasement':
         template_name = 'kobosh/base.html'
+    elif request.resolver_match.url_name == 'payment':
+        template_name = 'kobosh/payments.html'
+    elif request.resolver_match.url_name == 'search':
+        template_name = 'kobosh/result.html'
+    elif request.resolver_match.url_name == 'product_detail':
+        template_name = 'kobosh/details.html'
+    elif request.resolver_match.url_name == 'cart_detail':
+        template_name = 'kobosh/cart.html'
+    elif request.resolver_match.url_name == 'login_user':
+        template_name = 'kobosh/login.html'
+    elif request.resolver_match.url_name == 'signup_user':
+        template_name = 'kobosh/signup.html'
+    elif request.resolver_match.url_name == 'forgotpass':
+        template_name = 'kobosh/forgotpass.html'
     else:
         template_name = 'kobosh/categories.html'
     return render(request, template_name, context)

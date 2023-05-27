@@ -189,3 +189,34 @@ footer .foot_head .newsletter input[type='submit'] {
 
 }
 }
+@media only screen and (min-width: 1024px) {
+select {
+  width: 12%;
+  position: relative;
+  top: -7px;
+  line-height: 30px;
+  height: 35px;
+  left: -10px;
+  border: none;
+  background-color: #AF9331;
+  font-weight: bolder;
+  color: white;
+  padding-left: 22px;
+  font-size: 16px;
+  cursor: pointer;
+  left: 23%;
+  border-radius: 20px;
+}
+select option {
+  background-color: #AF9331;
+  position: relative;
+  border-radius: 20px;
+  color: white;
+  font-size: 14;
+  height: 50px;
+  font-weight: bolder;
+}
+select:focus {
+  outline: none;
+}
+}
